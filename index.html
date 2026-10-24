@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Devvrath Tewatia — robotics, machine learning, computer vision, and autonomous systems portfolio.">
+  <meta name="theme-color" content="#f7f8fa">
+  <title>Devvrath Tewatia | Robotics &amp; Machine Learning</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Devvrath Tewatia home">DT<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Selected work</a>
+      <a href="#research">Research interests</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="assets/Devvrath_Tewatia_CV.pdf" target="_blank" rel="noopener">CV ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> IIT Patna · Mechanical Engineering · Class of 2027</p>
+        <h1>Building intelligent systems at the intersection of <em>robots</em> and <em>learning.</em></h1>
+        <p class="intro">I'm Devvrath Tewatia. My work spans simulated robotic manipulation, rigid-body dynamics, computer vision, and physics-informed machine learning—with an emphasis on reproducible experiments and engineering validation.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="assets/Devvrath_Tewatia_CV.pdf" target="_blank" rel="noopener">View CV <span>↗</span></a>
+          <a class="button secondary" href="#work">Explore projects <span>↓</span></a>
+        </div>
+        <div class="quick-links">
+          <a href="https://github.com/devvrathtewatia" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="mailto:devvrathtewatia@gmail.com">Email ↗</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Profile summary">
+        <div class="card-topline"><span>PROFILE / 2026</span><span class="tiny-cross">＋</span></div>
+        <div class="monogram">DT<span>.</span></div>
+        <p class="hero-card-title">Robotics · ML · Computer Vision</p>
+        <div class="stat-grid">
+          <div><strong>04</strong><span>Core engineering &amp; ML projects</span></div>
+          <div><strong>316</strong><span>Dynamics solver tests</span></div>
+          <div><strong>5-fold</strong><span>Grouped CV for defect classification</span></div>
+          <div><strong>14-DOF</strong><span>Simulated bimanual system total</span></div>
+        </div>
+        <p class="small-note">Includes a separate coursework technical review on autonomous UAV railway inspection.</p>
+      </aside>
+    </section>
+
+    <section class="focus-strip" aria-label="Focus areas">
+      <span>ROBUST PERCEPTION</span><i></i><span>ROBOT MANIPULATION</span><i></i><span>DYNAMICS &amp; CONTROL</span><i></i><span>PHYSICS-INFORMED ML</span>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-heading">
+        <div><p class="eyebrow">SELECTED WORK</p><h2>Projects built, tested, and documented.</h2></div>
+        <p class="section-aside">A mix of simulation, model development, mathematical validation, and applied ML.</p>
+      </div>
+
+      <article class="project project-featured">
+        <div class="project-number">01 / ROBOTICS</div>
+        <div class="project-content">
+          <div class="project-title-row"><h3>7-DOF Bimanual Mobile Manipulation</h3><span class="pill">ROS 2 · Gazebo</span></div>
+          <p>Simulated mobile-manipulation pipeline spanning perception, localisation, navigation, collision-aware planning, bimanual grasping, reorientation, and placement.</p>
+          <ul>
+            <li>Developed a closed-form 7-DOF inverse-kinematics solver with elbow-swivel selection.</li>
+            <li>Demonstrated collision-free 90° object reorientation with 13–14 mm clearance and 1–4 mm final object drift.</li>
+            <li>Built a 166-check validation harness; mutation testing detected 12 of 13 injected faults.</li>
+          </ul>
+          <a class="text-link" href="https://github.com/devvrathtewatia/bimanual_ws" target="_blank" rel="noopener">Explore repository ↗</a>
+        </div>
+        <div class="project-mark mark-robot"><span>↗</span><div class="arm-graphic"><b></b><b></b><b></b><i></i></div><small>SIMULATED SYSTEM</small></div>
+      </article>
+
+      <article class="project">
+        <div class="project-number">02 / DYNAMICS</div>
+        <div class="project-content">
+          <div class="project-title-row"><h3>Robot Dynamics Solver</h3><span class="pill">Python · Numerical Methods</span></div>
+          <p>Standalone N-DOF rigid-body dynamics library using both Lagrangian mechanics and Featherstone algorithms.</p>
+          <ul>
+            <li>Implemented RNEA, CRBA and ABA, trajectory generation, RK4 simulation, and model-based control.</li>
+            <li>Cross-validated formulations across 13 models (2–9 DOF); added symbolic checks and a 316-test CI suite.</li>
+          </ul>
+          <a class="text-link" href="https://github.com/devvrathtewatia/Robot-Dynamics-Solver" target="_blank" rel="noopener">Explore repository ↗</a>
+        </div>
+        <div class="metric-panel"><strong>316</strong><span>automated tests</span><div class="mini-rule"></div><strong>2–9</strong><span>degrees of freedom tested</span></div>
+      </article>
+
+      <article class="project">
+        <div class="project-number">03 / COMPUTER VISION</div>
+        <div class="project-content">
+          <div class="project-title-row"><h3>Metal Surface Defect Classification</h3><span class="pill">CNN · TensorFlow/Keras</span></div>
+          <p>Custom lightweight CNN for six classes of grayscale metal-surface defects, evaluated with stratified, duplicate-grouped 5-fold cross-validation.</p>
+          <ul>
+            <li>305K-parameter model trained and evaluated on 1,800 images.</li>
+            <li>99.06% ± 0.87% mean accuracy across folds; analysed class-wise confusion between visually similar defect categories.</li>
+            <li>Created a single-image inference tool returning predicted labels and top-k class scores.</li>
+          </ul>
+          <p class="project-footnote">Project summary is provided here; a public source-code link will be added when the repository is ready to share.</p>
+        </div>
+        <div class="metric-panel"><strong>99.06%</strong><span>mean 5-fold accuracy</span><div class="mini-rule"></div><strong>6</strong><span>defect classes</span></div>
+      </article>
+
+      <article class="project">
+        <div class="project-number">04 / APPLIED ML</div>
+        <div class="project-content">
+          <div class="project-title-row"><h3>Energy Optimisation in Metal Manufacturing</h3><span class="pill">Physics-informed ML</span></div>
+          <p>Simulation-based CNC milling energy analysis combining a fitted physics-based power model, explainability, residual anomaly detection, and constrained optimisation.</p>
+          <ul>
+            <li>Achieved R² = 0.93 and MAPE = 3.3% on unseen simulated jobs.</li>
+            <li>Designed a cycle-time-constrained optimiser reporting 37% mean simulated energy savings.</li>
+            <li>Exposed predictions and simulated telemetry through FastAPI, AWS IoT Core (MQTT), and Streamlit.</li>
+          </ul>
+          <p class="project-footnote">The data and reported energy savings are simulation-based, not measured production-floor outcomes.</p>
+          <a class="text-link" href="https://github.com/devvrathtewatia/energy-optimization-for-metal-manufacturing" target="_blank" rel="noopener">Explore repository ↗</a>
+        </div>
+        <div class="metric-panel"><strong>R² 0.93</strong><span>unseen simulated jobs</span><div class="mini-rule"></div><strong>37%</strong><span>mean simulated savings</span></div>
+      </article>
+
+      <article class="project project-review">
+        <div class="project-number">05 / TECHNICAL REVIEW</div>
+        <div class="project-content">
+          <div class="project-title-row"><h3>Autonomous UAV Landing on a Moving Train</h3><span class="pill">Coursework · Co-authored</span></div>
+          <p>Literature-based technical review on UAV take-off and landing on moving trains for continuous railway infrastructure inspection.</p>
+          <p>Topics include GNSS-denied navigation, LiDAR–visual–inertial odometry, model-predictive control, active disturbance rejection control, and safety constraints.</p>
+          <p class="project-footnote">This is a coursework technical review; no UAV implementation or physical trials are claimed.</p>
+          <a class="text-link" href="assets/UAV_Railway_Inspection_Coursework_Review.pdf" target="_blank" rel="noopener">Read coursework report ↗</a>
+        </div>
+        <div class="review-stamp"><span>ME3205</span><strong>REVIEW</strong><small>RAILWAY AUTONOMY</small></div>
+      </article>
+    </section>
+
+    <section class="lower-grid">
+      <div class="lower-panel" id="research">
+        <p class="eyebrow">RESEARCH INTERESTS</p>
+        <h2>Questions I want to work on.</h2>
+        <div class="interest-list">
+          <span>Robust image recognition &amp; domain generalisation</span>
+          <span>Learning for manipulation and control</span>
+          <span>Robot motion planning and dynamics</span>
+          <span>Physics-informed machine learning</span>
+          <span>Sim-to-real transfer</span>
+        </div>
+      </div>
+      <div class="lower-panel" id="about">
+        <p class="eyebrow">ABOUT</p>
+        <h2>Mechanical engineering, with a computational focus.</h2>
+        <p>B.Tech student at IIT Patna (2023–2027; CPI 7.9/10), building at the intersection of robotics, machine learning, and engineering systems.</p>
+        <p class="small-note">Skills include Python, C++, SQL, ROS 2, Gazebo, PyTorch, TensorFlow/Keras, OpenCV, Git/GitHub, automated testing, FastAPI, and Streamlit.</p>
+        <div class="about-links"><a href="assets/Devvrath_Tewatia_CV.pdf" target="_blank" rel="noopener">CV PDF ↗</a><a href="https://github.com/devvrathtewatia" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Devvrath Tewatia</strong><span>Robotics · ML · Autonomous Systems</span></div>
+    <div class="footer-links"><a href="mailto:devvrathtewatia@gmail.com">Email</a><a href="https://github.com/devvrathtewatia" target="_blank" rel="noopener">GitHub</a><a href="assets/Devvrath_Tewatia_CV.pdf" target="_blank" rel="noopener">CV</a></div>
+    <small>© <span id="year">2026</span> · Built for clarity, evidence, and reproducibility.</small>
+  </footer>
+</body>
+</html>
