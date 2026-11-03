@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devvrath Tewatia – Robotics, ML and Data</title>
+<meta name="description" content="Mechanical engineering student at IIT Patna building robots, ML systems and data pipelines.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦾</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d1224;--surface:#151b34;--line:#2a3358;--text:#e9edff;--muted:#9aa4cc;
+--data:#5de0c0;--ai:#a98bff;--robo:#ffb454;--blue:#7aa2ff;
+--display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--body:'Instrument Sans','Segoe UI',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font:400 1.02rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;background:rgba(13,18,36,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{font-family:var(--display);font-weight:800}
+nav ul{display:flex;gap:20px;list-style:none;padding:0;font-size:.92rem;color:var(--muted)}
+nav a{text-decoration:none}nav a:hover{color:var(--text)}
+@media(max-width:720px){nav ul li:nth-child(n+4){display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;padding-top:clamp(70px,14vh,140px);padding-bottom:clamp(70px,12vh,120px);pointer-events:none}
+.hero .wrap *{pointer-events:auto}
+h1{font:800 clamp(2.8rem,8vw,6rem)/.95 var(--display);letter-spacing:-.03em;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.lead{max-width:34ch;margin-top:26px;font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:1.4;color:var(--text);animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both}
+.sub{margin-top:14px;color:var(--muted);max-width:52ch;animation:rise .9s .25s both}
+.dom{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;animation:rise .9s .35s both}
+.dom a{text-decoration:none;font-weight:600;font-size:.9rem;padding:8px 16px;border-radius:99px;border:1px solid currentColor}
+.dom a:nth-child(1){color:var(--data)}.dom a:nth-child(2){color:var(--ai)}.dom a:nth-child(3){color:var(--robo)}
+.dom a:hover{background:currentColor}.dom a:hover span{color:var(--ink)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;animation:rise .9s .45s both}
+.btn{padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+.btn.main{background:var(--text);color:var(--ink);border-color:var(--text)}
+.btn:hover{border-color:var(--blue)}
+.hint{position:absolute;right:24px;bottom:16px;font-size:.8rem;color:var(--muted);pointer-events:none}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+/* sections */
+section{padding:clamp(56px,9vw,100px) 0;border-bottom:1px solid var(--line)}
+.shead{display:flex;gap:18px;align-items:flex-start;margin-bottom:34px}
+.bar{width:6px;align-self:stretch;border-radius:3px;background:var(--c)}
+h2{font:800 clamp(1.9rem,4.5vw,3rem)/1.05 var(--display);letter-spacing:-.02em}
+.shead p{color:var(--muted);margin-top:8px;max-width:56ch}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:14px;border-top:3px solid var(--c);transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px)}
+.card.wide{grid-column:1/-1}
+.card h3{font:800 1.3rem/1.2 var(--display)}
+.tag{font-size:.82rem;color:var(--muted)}
+.metrics{display:flex;gap:22px;flex-wrap:wrap}
+.metrics div{font-size:.8rem;color:var(--muted)}
+.metrics strong{display:block;font:800 1.9rem/1 var(--display);color:var(--c);margin-bottom:2px}
+.card ul{padding-left:18px;color:#c9d0ee;font-size:.95rem}
+.card li{margin-bottom:6px}
+.stack{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.stack span{font-size:.76rem;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.06);color:var(--muted)}
+.link{font-weight:600;text-decoration:none;color:var(--c)}
+.link:hover{text-decoration:underline}
+.note{font-size:.85rem;color:var(--muted);font-style:italic}
+.data{--c:var(--data)}.ai{--c:var(--ai)}.robo{--c:var(--robo)}
+.empty{border-style:dashed;border-top-style:dashed;align-items:flex-start;justify-content:center;min-height:200px;background:transparent}
+.empty h3{color:var(--muted)}
+/* github */
+#gh{--c:var(--blue)}
+.repos{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.repo{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.repo:hover{border-color:var(--blue)}
+.repo b{font-family:var(--display);font-size:1.05rem}
+.repo p{font-size:.88rem;color:var(--muted);margin:6px 0 10px}
+.repo small{color:var(--muted)}
+.repo i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--blue);margin-right:6px}
+.feed{margin-top:26px;font-size:.92rem;color:var(--muted);display:grid;gap:6px}
+.feed span{color:var(--text)}
+/* about */
+.two{display:grid;gap:40px;grid-template-columns:1.2fr 1fr}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.tl{border-left:2px solid var(--line);padding-left:20px;display:grid;gap:22px}
+.tl h4{font:800 1.05rem var(--display)}
+.tl p,.tl li{font-size:.92rem;color:var(--muted)}
+.tl ul{padding-left:16px}
+.skills dt{font:800 .95rem var(--display);margin-top:14px}
+.skills dd{margin:2px 0 0;color:var(--muted);font-size:.92rem}
+.ach{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.ach span{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:.88rem;background:var(--surface)}
+footer{padding:70px 0 50px;text-align:left}
+footer h2{margin-bottom:18px}
+footer .cta{animation:none}
+small.copy{display:block;margin-top:40px;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Devvrath Tewatia</b>
+<ul><li><a href="#data">Data &amp; ML</a></li><li><a href="#ai">AI</a></li><li><a href="#robotics">Robotics</a></li><li><a href="#gh">GitHub</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<header class="hero">
+<canvas id="arm" aria-hidden="true"></canvas>
+<div class="wrap">
+<h1>Devvrath<br>Tewatia</h1>
+<p class="lead">I build robots that move precisely, models that explain themselves, and pipelines that don’t break.</p>
+<p class="sub">Mechanical engineering student at IIT Patna working across robotics and control, applied machine learning, and data engineering.</p>
+<div class="dom"><a href="#data"><span>Data &amp; ML</span></a><a href="#ai"><span>AI</span></a><a href="#robotics"><span>Robotics &amp; Control</span></a></div>
+<div class="cta"><a class="btn main" href="resume.pdf">Resume</a><a class="btn" href="https://github.com/devvrathtewatia">GitHub</a><a class="btn" href="mailto:devvrathtewatia@gmail.com">Email me</a></div>
+</div>
+<span class="hint">This 2-link arm solves inverse kinematics live. Move your cursor.</span>
+</header>
+
+<section id="data" class="data"><div class="wrap">
+<div class="shead"><div class="bar"></div><div><h2>Data analysis &amp; ML</h2><p>From raw tables and sensor streams to validated models and dashboards people can act on.</p></div></div>
+<div class="grid">
+<article class="card"><h3>Retail Order &amp; Delivery Analytics Pipeline</h3><span class="tag">Python · PostgreSQL · SQL</span>
+<div class="metrics"><div><strong>0.847</strong>ROC-AUC</div><div><strong>5.72×</strong>lift, top 10% risk</div></div>
+<ul><li>Reproducible full-refresh ETL over 99,441 marketplace orders with 59 data-quality checks.</li><li>13 SQL analyses of delays, cancellations and seller/region performance.</li><li>Time-aware LightGBM and XGBoost late-delivery models, validated by 132 tests.</li></ul>
+<div class="stack"><span>LightGBM</span><span>XGBoost</span><span>ETL</span><span>Testing</span></div>
+<a class="link" href="https://github.com/devvrathtewatia/retail-analysis-pipeline">View on GitHub →</a></article>
+
+<article class="card"><h3>CNC Energy Optimisation</h3><span class="tag">Bright Edge Metals · Research internship</span>
+<div class="metrics"><div><strong>0.931</strong>R² on held-out jobs</div><div><strong>37%</strong>simulated energy saving</div></div>
+<ul><li>21-parameter physics-based CNC milling power model, 0.365 kW test MAE.</li><li>Cycle-time-constrained optimiser, SHAP interpretation and residual anomaly detection.</li><li>Live stack: MQTT on AWS IoT Core, FastAPI inference, Streamlit dashboard.</li></ul>
+<p class="note">Results are on physics-based synthetic data.</p>
+<div class="stack"><span>SHAP</span><span>FastAPI</span><span>AWS IoT Core</span><span>Streamlit</span></div>
+<a class="link" href="https://github.com/devvrathtewatia/energy-optimization-for-metal-manufacturing">View on GitHub →</a></article>
+
+<article class="card"><h3>Metal Surface Defect Classification (CNN)</h3><span class="tag">TensorFlow · Keras · Computer vision</span>
+<div class="metrics"><div><strong>99.06%</strong>mean CV accuracy (±0.87%)</div><div><strong>305K</strong>parameters</div><div><strong>6</strong>defect classes</div></div>
+<ul><li>1,800 grayscale images, evaluated with duplicate-grouped stratified five-fold cross-validation so near-copies never leak across folds.</li><li>Macro-F1 and class-wise error analysis, plus a reusable single-image inference tool returning top-k confidence scores.</li></ul>
+<a class="link" href="https://github.com/devvrathtewatia/CNN_crack_detection">View on GitHub →</a></article>
+
+<article class="card"><h3>Amazon ML Challenge 2025: Multimodal Price Prediction</h3><span class="tag">Team competition · Top-100 team ranking</span>
+<ul><li>Multimodal price-prediction pipeline combining BERT text embeddings, image-derived features and engineered product attributes.</li><li>Gradient-boosted models (LightGBM, XGBoost, CatBoost) tuned with Optuna and evaluated on SMAPE and MAE.</li></ul>
+<div class="stack"><span>BERT</span><span>LightGBM</span><span>CatBoost</span><span>Optuna</span></div>
+<a class="link" href="https://github.com/devvrathtewatia/ML_challenge">View on GitHub →</a></article>
+</div></div></section>
+
+<section id="ai" class="ai"><div class="wrap">
+<div class="shead"><div class="bar"></div><div><h2>AI</h2><p>Agents, voice and real-time systems that connect models to the real world.</p></div></div>
+<div class="grid">
+<article class="card"><h3>IRONCLAW: Android Automation Platform</h3><span class="tag">Team project · Monorepo · FastAPI · DroidRun · Telegram</span>
+<ul><li>Monorepo that orchestrates Android device automation, voice AI calls, job hunting and personal productivity tasks through a web interface and a Telegram bot.</li><li>FastAPI gateway coordinating cross-platform tasks: resume parsing, automated job applications and voice AI calls, with DroidRun and MobileRun cloud integration.</li><li>Human-in-the-loop services that hand CAPTCHAs and 2FA to a person, with remote device control from Telegram.</li></ul>
+<div class="stack"><span>FastAPI</span><span>DroidRun</span><span>MobileRun</span><span>Telegram bot</span><span>HITL</span></div></article>
+
+<article class="card"><h3>SpeakLingo: Real-Time Video Translation</h3><span class="tag">Team project · Redis Pub/Sub · WebRTC · Gemini · Qwen3-TTS</span>
+<div class="metrics"><div><strong>&lt;545 ms</strong>translation latency</div></div>
+<ul><li>Event-driven translation system using Redis Pub/Sub for backend synchronisation and WebRTC for low-latency video streaming.</li><li>Gemini 2.5 Flash Lite combined with Qwen3-TTS for voice cloning.</li><li>React hooks with automatic caching and latency metrics to cut API overhead and UI lag.</li></ul>
+<div class="stack"><span>WebRTC</span><span>Redis</span><span>Gemini 2.5 Flash Lite</span><span>Qwen3-TTS</span><span>React</span></div></article>
+</div></div></section>
+
+<section id="robotics" class="robo"><div class="wrap">
+<div class="shead"><div class="bar"></div><div><h2>Robotics &amp; control</h2><p>Kinematics, dynamics, perception and planning, tested hard enough to trust.</p></div></div>
+<div class="grid">
+<article class="card wide"><h3>7-DOF Bimanual Mobile Manipulation</h3><span class="tag">B.Tech project · ROS 2 · Gazebo · camera/LiDAR perception</span>
+<div class="metrics"><div><strong>13–14 mm</strong>collision-free clearance</div><div><strong>1–4 mm</strong>final object drift</div><div><strong>166</strong>validation checks</div><div><strong>12 / 13</strong>injected faults caught</div></div>
+<ul><li>Kobuki base with a dual-arm system, combining 3D perception, localisation, navigation and collision-aware planning in simulation.</li><li>Closed-form inverse kinematics with the elbow swivel as a free input, chosen by dynamic programming across the whole motion.</li><li>Collision-free 90° bimanual reorientation, with mutation testing to prove the test suite catches real faults.</li></ul>
+<div class="stack"><span>ROS 2</span><span>Gazebo</span><span>IK</span><span>Motion planning</span></div>
+<a class="link" href="https://github.com/devvrathtewatia/bimanual_ws">View on GitHub →</a></article>
+
+<article class="card"><h3>Robot Dynamics Solver</h3><span class="tag">Independent project · Python · SymPy</span>
+<div class="metrics"><div><strong>316</strong>automated tests</div><div><strong>1.6×10⁻¹⁴</strong>cross-validation error</div></div>
+<ul><li>General N-DOF library with Lagrangian and Featherstone (RNEA, CRBA, ABA) formulations, checked across 13 models.</li><li>Quintic trajectories, RK4 simulation, PD, feedforward and computed-torque control. Computed torque cut tracking error from 5.4×10⁻² to 1.6×10⁻¹¹ rad in a two-link simulation.</li></ul>
+<a class="link" href="https://github.com/devvrathtewatia/Robot-Dynamics-Solver">View on GitHub →</a></article>
+
+<article class="card"><h3>Vision-Guided Magnetic Microrobot</h3><span class="tag">Collaborative project · Ongoing</span>
+<ul><li>Camera-feedback platform with Arduino-controlled coil actuation and planar navigation.</li><li>Eight-direction actuator calibration with PWM sweeps to measure motion thresholds, speed response and hysteresis.</li><li>Adaptive-region visual tracking, waypoint following, velocity PID and calibration-based feedforward.</li><li>Next: benchmark an adaptive nonlinear controller against the PID baseline.</li></ul>
+<div class="stack"><span>OpenCV</span><span>PID</span><span>Arduino</span></div></article>
+
+<article class="card wide"><h3>Autonomous UAV Landing on a Moving Train</h3><span class="tag">Co-authored literature review · Technical report</span>
+<p style="color:#c9d0ee;font-size:.95rem">Survey of UAV take-off and landing on moving trains: GNSS-denied navigation, LiDAR-visual-inertial odometry, model predictive control, active disturbance rejection control and safety constraints.</p>
+<p class="note">Literature review only. No flight-control implementation.</p></article>
+</div></div></section>
+
+<section id="gh"><div class="wrap">
+<div class="shead"><div class="bar" style="--c:var(--blue)"></div><div><h2>Live from GitHub</h2><p>Pulled straight from the GitHub API, so this updates when I push.</p></div></div>
+<div class="repos" id="repos"><a class="repo" href="https://github.com/devvrathtewatia"><b>Loading repositories…</b><p>If this does not load, open github.com/devvrathtewatia.</p></a></div>
+<div class="feed" id="feed"></div>
+</div></section>
+
+<section id="about"><div class="wrap two">
+<div><div class="shead"><div class="bar" style="--c:var(--text)"></div><div><h2>Range, with depth</h2></div></div>
+<p style="color:#c9d0ee">A robot needs a dynamics model, a perception stack and a controller. A manufacturing line needs clean data, a trustworthy model and a dashboard. I work on all of these, and I test each one until the numbers hold up: cross-validated formulas, mutation testing, grouped splits that stop leakage.</p>
+<dl class="skills">
+<dt>Programming</dt><dd>Python, C/C++, SQL, PostgreSQL, NumPy, SymPy, Pandas</dd>
+<dt>Robotics</dt><dd>ROS 2, Gazebo, CoppeliaSim, Arduino, inverse kinematics, motion planning, collision checking</dd>
+<dt>Control and dynamics</dt><dd>PID, feedforward, computed torque, Lagrangian mechanics, RNEA, CRBA, ABA</dd>
+<dt>ML and perception</dt><dd>PyTorch, TensorFlow/Keras, scikit-learn, LightGBM, XGBoost, OpenCV, SHAP, camera/LiDAR perception</dd>
+<dt>Engineering and deployment</dt><dd>SolidWorks, ANSYS, FastAPI, Streamlit, MQTT, AWS IoT Core, Git, CI</dd></dl>
+<div class="ach"><span>Amazon ML Challenge 2025: Top-100 team ranking</span><span>JEE Main: AIR 8,221</span><span>IIT Patna: top 15% of batch (CPI 7.9)</span></div></div>
+<div class="tl">
+<div><h4>Research Intern, Bright Edge Metals</h4><p>May – July 2026</p><p>AI-driven energy optimisation in metal manufacturing.</p></div>
+<div><h4>B.Tech, Mechanical Engineering</h4><p>IIT Patna, 2023 – 2027 · CPI 7.9/10</p></div>
+<div><h4>Chassis Design Coordinator</h4><p>IIT Patna Motorsports. Built the SolidWorks chassis model and finalised the seat-mounting layout within packaging limits.</p></div>
+<div><h4>Coordinator, Mechanical Engineering Student Council</h4><p>Ran EFX: Upkarna workshops and CAD events, and coordinated the Robo Wars competition with Celesta.</p></div>
+<div><h4>Research interests</h4><p>Robot manipulation and control, visual perception and state estimation, motion planning, adaptive and robust control, medical microrobotics.</p></div>
+</div></div></section>
+
+<footer id="contact"><div class="wrap">
+<h2>Let’s build something.</h2>
+<p style="color:var(--muted);max-width:50ch">Open to research internships and roles across robotics, applied ML and data.</p>
+<div class="cta"><a class="btn main" href="mailto:devvrathtewatia@gmail.com">devvrathtewatia@gmail.com</a><a class="btn" href="https://github.com/devvrathtewatia">GitHub</a><a class="btn" href="resume.pdf">Resume</a></div>
+<small class="copy">© 2026 Devvrath Tewatia</small>
+</div></footer>
+
+<script>
+/* live GitHub */
+(function(){
+var U='devvrathtewatia',ago=function(d){var s=(Date.now()-new Date(d))/864e5;return s<1?'today':s<2?'yesterday':Math.floor(s)+' days ago'};
+var esc=function(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+fetch('https://api.github.com/users/'+U+'/repos?sort=pushed&per_page=12').then(function(r){return r.json()}).then(function(a){
+ if(!Array.isArray(a))throw 0;
+ var h=a.filter(function(r){return!r.fork&&r.name!==U+'.github.io'}).slice(0,6).map(function(r){
+  return '<a class="repo" href="'+r.html_url+'"><b>'+esc(r.name)+'</b><p>'+esc(r.description||'No description yet.')+'</p><small><i></i>'+esc(r.language||'Mixed')+' · pushed '+ago(r.pushed_at)+'</small></a>'}).join('');
+ document.getElementById('repos').innerHTML=h||'<a class="repo" href="https://github.com/'+U+'"><b>No public repositories found</b></a>';
+}).catch(function(){});
+fetch('https://api.github.com/users/'+U+'/events/public?per_page=30').then(function(r){return r.json()}).then(function(e){
+ if(!Array.isArray(e))throw 0;
+ var p=e.filter(function(x){return x.type==='PushEvent'}).slice(0,5);
+ if(!p.length)return;
+ document.getElementById('feed').innerHTML='<b style="color:var(--text)">Recent activity</b>'+p.map(function(x){
+  var n=x.payload.size||(x.payload.commits&&x.payload.commits.length)||1;
+  return '<div>Pushed '+n+' commit'+(n>1?'s':'')+' to <span>'+esc(x.repo.name.split('/')[1])+'</span> · '+ago(x.created_at)+'</div>'}).join('');
+}).catch(function(){});
+})();
+
+/* hero: 2-link arm solving analytic IK */
+(function(){
+var c=document.getElementById('arm'),x=c.getContext('2d'),W,H,dpr,base,L1,L2,t=0,tx=null,ty=null,a1=-1,a2=1.6,moved=0;
+var calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function size(){dpr=Math.min(devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+ var s=Math.min(W,H*1.1);base={x:W>760?W*.78:W*.5,y:W>760?H*.62:H*.95};L1=Math.max(90,s*.27);L2=L1*.85}
+function ik(px,py){var dx=px-base.x,dy=py-base.y,d=Math.hypot(dx,dy),r=L1+L2-1;
+ if(d>r){dx*=r/d;dy*=r/d;d=r}d=Math.max(d,Math.abs(L1-L2)+1);
+ var cb=(d*d-L1*L1-L2*L2)/(2*L1*L2),b=Math.acos(Math.max(-1,Math.min(1,cb))),
+ al=Math.atan2(dy,dx)-Math.atan2(L2*Math.sin(b),L1+L2*Math.cos(b));return[al,b]}
+function frame(){
+ t+=.012;var gx,gy;
+ if(tx===null||Date.now()-moved>3500){gx=base.x-L1*1.1+Math.cos(t)*L1*.8;gy=base.y-L1*.7+Math.sin(t*1.7)*L1*.6}else{gx=tx;gy=ty}
+ var s=ik(gx,gy);a1+=(s[0]-a1)*.12;a2+=(s[1]-a2)*.12;
+ x.clearRect(0,0,W,H);
+ x.strokeStyle='rgba(122,162,255,.07)';x.lineWidth=1;
+ for(var i=0;i<W;i+=48){x.beginPath();x.moveTo(i,0);x.lineTo(i,H);x.stroke()}
+ for(var j=0;j<H;j+=48){x.beginPath();x.moveTo(0,j);x.lineTo(W,j);x.stroke()}
+ x.strokeStyle='rgba(255,180,84,.25)';x.setLineDash([4,6]);x.beginPath();x.arc(base.x,base.y,L1+L2,Math.PI,2*Math.PI);x.stroke();x.setLineDash([]);
+ var ex=base.x+L1*Math.cos(a1),ey=base.y+L1*Math.sin(a1),hx=ex+L2*Math.cos(a1+a2),hy=ey+L2*Math.sin(a1+a2);
+ x.lineCap='round';
+ x.strokeStyle='#ffb454';x.lineWidth=14;x.beginPath();x.moveTo(base.x,base.y);x.lineTo(ex,ey);x.stroke();
+ x.strokeStyle='#7aa2ff';x.lineWidth=11;x.beginPath();x.moveTo(ex,ey);x.lineTo(hx,hy);x.stroke();
+ x.fillStyle='#0d1224';[[base.x,base.y,11],[ex,ey,9]].forEach(function(p){x.beginPath();x.arc(p[0],p[1],p[2],0,7);x.fill();x.strokeStyle='#e9edff';x.lineWidth=2;x.stroke()});
+ x.fillStyle='#5de0c0';x.beginPath();x.arc(hx,hy,7,0,7);x.fill();
+ x.fillStyle='#9aa4cc';x.font='12px monospace';x.fillText('θ1 '+(a1*57.3).toFixed(0)+'°  θ2 '+(a2*57.3).toFixed(0)+'°',Math.max(12,base.x-60),Math.min(H-14,base.y+34));
+ if(!calm)requestAnimationFrame(frame)}
+addEventListener('resize',size);size();
+c.parentElement.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();tx=e.clientX-r.left;ty=e.clientY-r.top;moved=Date.now();if(calm)frame()});
+frame();
+})();
+</script>
+</body>
+</html>
